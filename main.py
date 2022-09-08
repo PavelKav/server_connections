@@ -1,8 +1,8 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
-import psycopg2
-from conf import host, user, password, db_name
-from gui_0_1 import *
+#import psycopg2
+#from conf import host, user, password, db_name
+from gui01 import *
 
 
 class MyWin(QtWidgets.QMainWindow):
@@ -12,13 +12,13 @@ class MyWin(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
 
         self.ui.cat_web.clicked.connect(self.watch_category)
-        self.ui.cat_pk.clicked.connect(self.connect_serv)
+        # self.ui.cat_pk.clicked.connect(self.connect_serv)
 
 
     def watch_category(self):
         # self.ui.listWidget.currentItem().text()
-        self.ui.listWidget.addItem('new item')
-
+        self.ui.listWidget.addItem('login')
+    '''    
     def connect_serv(self):
         try:
             connection = psycopg2.connect(
@@ -40,7 +40,7 @@ class MyWin(QtWidgets.QMainWindow):
             if connection:
                 connection.close()
                 self.ui.plainTextEdit.appendPlainText("[INFO] PostgreSQL connection closed")
-
+    '''
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     myapp = MyWin()
