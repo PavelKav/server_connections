@@ -86,6 +86,3 @@ class Ui_MainWindow(object):
         item = self.listWidget.item(3)
         item.setText(_translate("MainWindow", "New Item"))
         self.listWidget.setSortingEnabled(__sortingEnabled)
-
-
-
